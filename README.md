@@ -16,7 +16,7 @@ The agent is equipped with a set of tools and a reasoning loop, allowing it to:
 
 * File System Interaction: Read the contents of existing files or write new content to files (e.g., write_file('output.txt', 'Hello World')).
 
-* Directory Navigation: List all files and folders within a specified directory to understand the project structure (list_directory('.')).
+* Directory Navigation: Lists all files and folders within a specified directory to understand the project structure (list_directory('.')).
 
 * Python Code Execution: Run Python (.py) files and receive their stdout and stderr output, enabling dynamic scripting and data processing (run_python_file('process_data.py')).
 
@@ -24,9 +24,9 @@ The agent is equipped with a set of tools and a reasoning loop, allowing it to:
 
 🛠️ How It Works
 
-This agent uses the tool-calling (or function-calling) capabilities of the Google Generative AI API.
+This agent uses the tool-calling (or function-calling) capabilities of the Google Generative AI API to call custom file functions.
 
-  * Prompt: The user provides a high-level goal.
+  * Prompt: The user provides a goal for the model.
 
   * Plan: The GenAI model analyzes the prompt and identifies the tools needed. It generates a "plan" which is a sequence of tool calls.
 
@@ -40,4 +40,4 @@ This agent uses the tool-calling (or function-calling) capabilities of the Googl
 
 **Warning**
 
-Genai can sometimes misunderstand what you mean and change your code in unwanted ways. be sure to backup any file that it will be given access to. for security reasons I have constrained it's working directory to "[the folder Agent is installed]/calculator". you can easily change or completely remove it by changing it in the function_call.py.
+Genai can sometimes misunderstand what you mean and change your code in unwanted ways. be sure to backup any file that it will be given access to. for security reasons I have constrained it's working directory to "[the folder Agent is installed]/calculator". you can easily change or completely remove it by changing it in the function_call.py. (though it is heavily recommended to not remove it since the model can be unpredictable in how it completes your taks)
